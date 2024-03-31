@@ -1,0 +1,83 @@
+.item {
+  margin-top: 13px;
+  padding: 18px 28px 15px 18px;
+  width: 633px;
+  border-radius: 30px;
+  background: #ffffff;
+  box-shadow: 0px 0px 20px 0px rgb(0, 0, 0, 0.1);
+
+  &:last-child {
+    margin-bottom: 13px;
+  }
+
+  .wrapper {
+    display: flex;
+  }
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .options {
+    margin-top: 19px;
+
+    & button {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #ffce7f;
+      color: #ffffff;
+      font-size: 20px;
+      text-align: center;
+      cursor: pointer;
+
+      &:disabled {
+        background: gray;
+        cursor: auto;
+      }
+    }
+
+    & span {
+      margin: 0px 25px 0px 25px;
+      display: inline-block;
+      font-weight: 600;
+    }
+  }
+
+  .middle {
+    margin-left: 23px;
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .name {
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+
+    & span {
+      color: #aaaaaa;
+      font-size: 15px;
+      font-weight: 600;
+    }
+  }
+
+  .right {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    & img {
+      cursor: pointer;
+    }
+
+    & span {
+      font-weight: 600;
+      font-size: 15px;
+    }
+  }
+}

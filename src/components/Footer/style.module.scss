@@ -1,0 +1,86 @@
+.footer {
+  padding: 30px 26px 32px 30px;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+  background: #ffffff;
+  width: 1110px;
+
+  & a {
+    transition: 0.2s ease all;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .logo {
+    color: #101010;
+    font-weight: 700;
+    font-size: 25px;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+
+    & a {
+      color: #000000;
+
+      &:not(:last-child) {
+        margin-bottom: 11px;
+      }
+    }
+  }
+
+  .conditions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .options {
+      display: flex;
+      align-items: center;
+
+      & span {
+        font-size: 15px;
+
+        &:not(:last-child) {
+          margin-right: 17px;
+          color: #ffa542;
+          font-weight: 700;
+        }
+      }
+
+      &::before {
+        margin-right: 7px;
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-image: url("../../assets/img/RU.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
+
+  .social {
+    & a {
+      text-decoration: none;
+
+      &:not(:last-child) {
+        margin-right: 18px;
+      }
+
+      & img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}

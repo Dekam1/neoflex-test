@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+
+import { fetchItems } from "./redux/slices/itemSlices";
+import { fetchBasketItems } from "./redux/slices/basketSlices";
+
+import Main from "./components/Pages/Main";
+import Basket from "./components/Pages/Basket";
+import { useDispatch } from "react-redux";
+
+const ROUTES = [
+  {
+    path: "/",
+    element: <Main />,
+  },
+  {
+    path: "basket",
+    element: <Basket />,
+  },
+];
 
 function App() {
+  const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    dispatch(fetchItems());
+    dispatch(fetchBasketItems());
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      {ROUTES.map(({ path, element }) => (
+        <Route key={path} path={path} element={element} />
+      ))}
+    </Routes>
   );
 }
 
